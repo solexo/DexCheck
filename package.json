@@ -1,10 +1,11 @@
 {
-    "name": "my-project",
-    "version": "1.0.0",
-    "scripts": {
-        "start": "serve ."
-    },
-    "dependencies": {
-        "serve": "^14.2.4"
-    }
+  "name": "my-project",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "serve .",
+    "build": "npm install" // Add this line for build command
+  },
+  "dependencies": {
+    "serve": "^14.0.1" // Ensure this is installed
+  }
 }

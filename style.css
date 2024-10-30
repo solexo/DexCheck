@@ -207,3 +207,8 @@ footer a {
     }
 }
 
+.logo {
+    max-width: 100%;  /* Responsive size */
+    height: auto;     /* Maintain aspect ratio */
+    margin-bottom: 20px; /* Space below the logo */
+}

@@ -3,9 +3,9 @@
   "version": "1.0.0",
   "scripts": {
     "start": "serve .",
-    "build": "npm install" // Add this line for build command
+    "build": "npm install"  
   },
   "dependencies": {
-    "serve": "^14.0.1" // Ensure this is installed
+    "serve": "^14.0.1"  
   }
 }

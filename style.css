@@ -1,0 +1,209 @@
+:root {
+    --bg-color: #1e1e1e;
+    --text-color: #ffffff;
+    --green-color: #00ff00;
+    --red-color: #ff3333;
+    --blue-color: #00ccff;
+    --yellow-color: #ffff00;
+    --button-hover-color: #00cc00;
+    --shadow-color: rgb(123, 255, 0); /* Default shadow color */
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    text-align: center;
+    padding: 10px;
+}
+
+.container {
+    max-width: 400px; /* Limit the width of the container */
+    padding: 20px; /* Add padding for better spacing */
+    border-radius: 10px; /* Rounded corners */
+    background-color: rgba(30, 30, 30, 0.8); /* Semi-transparent background */
+    box-shadow: 0 0 20px var(--shadow-color); /* Shadow effect */
+}
+
+h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px; /* Adjust margin */
+    text-shadow: 0 0 10px var(--shadow-color), 0 0 20px var(--shadow-color);
+}
+
+p {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+
+input {
+    padding: 7px;
+    border: none;
+    border-radius: 14px;
+    margin-right: 10px;
+    font-size: 1em;
+    width: 97%;
+    box-shadow: 0 0 10px var(--shadow-color);
+    margin-bottom: 20px;
+}
+
+input:focus {
+    outline: none;
+    box-shadow: 0 0 5px var(--shadow-color);
+    border: 1px solid var(--green-color);
+}
+
+button {
+    padding: 12px 24px;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--green-color);
+    color: #000;
+    font-size: 1em;
+    cursor: pointer;
+    box-shadow: 0 0 10px var(--shadow-color);
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+button:hover {
+    background-color: var(--button-hover-color);
+    transform: scale(1.05);
+}
+
+button:active {
+    background-color: #009900;
+}
+
+.status {
+    font-size: 24px;
+    font-weight: bold;
+    margin-top: 20px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid transparent;
+    transition: all 0.5s ease;
+}
+
+.paid {
+    background-color: rgba(0, 255, 0, 0.1);
+    border-color: var(--green-color);
+}
+
+.not-paid {
+    background-color: rgba(255, 0, 0, 0.1);
+    border-color: var(--red-color);
+}
+
+.spinner {
+    border: 5px solid var(--shadow-color);
+    border-top: 5px solid transparent;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    animation: spin 1s linear infinite;
+    display: none; /* Hidden by default */
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+footer {
+    margin-top: 20px;
+    font-size: 0.8em;
+    color: #aaa;
+}
+
+footer a {
+    color: var(--green-color);
+}
+
+@media (max-width: 600px) {
+    h1 { font-size: 1.5em; }
+    button { width: 46%; }
+}
+
+@media (max-width: 400px) {
+    h1 { font-size: 1.2em; }
+    button { width: 46%; }
+}
+
+.blockchain-animation {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px; /* Space below the animation */
+}
+
+.block {
+    width: 50px;  /* Width of the blocks */
+    height: 50px; /* Height of the blocks */
+    margin: 0 10px; /* Space between blocks */
+    border-radius: 5px; /* Rounded corners */
+    opacity: 0; /* Start invisible */
+    animation: blockAnimation 1.5s ease-in-out infinite; /* Infinite animation */
+}
+
+/* Colors for each block */
+.block1 {
+    background-color: var(--green-color);
+    box-shadow: 0 0 20px var(--green-color); /* Neon green shadow */
+    animation-delay: 0s;
+}
+
+.block2 {
+    background-color: var(--red-color);
+    box-shadow: 0 0 20px var(--red-color); /* Neon red shadow */
+    animation-delay: 0.5s; /* Start 0.5 seconds later */
+}
+
+.block3 {
+    background-color: var(--blue-color);
+    box-shadow: 0 0 20px var(--blue-color); /* Neon blue shadow */
+    animation-delay: 1s; /* Start 1 second later */
+}
+
+.block4 {
+    background-color: var(--yellow-color);
+    box-shadow: 0 0 20px var(--yellow-color); /* Neon yellow shadow */
+    animation-delay: 1.5s; /* Start 1.5 seconds later */
+}
+
+@keyframes blockAnimation {
+    0%, 100% {
+        opacity: 0;
+        transform: translateY(20px); /* Start below */
+    }
+    50% {
+        opacity: 1; /* Fully visible at the midpoint */
+        transform: translateY(0); /* End in original position */
+    }
+}
+.emoji {
+    position: absolute;
+    font-size: 2em; /* Adjust size of the emoji */
+    animation: explosion-animation 0.8s ease forwards; /* Use the explosion animation */
+    opacity: 1; /* Start fully visible */
+}
+
+@keyframes explosion-animation {
+    0% {
+        transform: translateY(0) scale(1); /* Start at original position */
+        opacity: 1; /* Fully visible */
+    }
+    50% {
+        transform: translateY(-30px) scale(1.2); /* Move up and scale slightly */
+        opacity: 1; /* Still visible */
+    }
+    100% {
+        transform: translateY(-100px) scale(0); /* Move up and disappear */
+        opacity: 0; /* Fade out */
+    }
+}
+
